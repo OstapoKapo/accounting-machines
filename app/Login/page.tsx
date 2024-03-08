@@ -1,6 +1,11 @@
+'use client'
+import axios from 'axios';
 import '../globals.css';
+import React, {useEffect} from 'react';
+
 
 export default function Home() {
+
   return (
       <div className='w-[100%] h-full center flex-col bg-[url(../public/background.png)] bg-center bg-cover p-[20px]'>
         <h1 className='text-[40px] text-[#5DB75E] font-semibold'>Log In</h1>

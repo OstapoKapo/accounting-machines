@@ -1,14 +1,14 @@
-export interface User {
+import mongoose, {Schema} from "mongoose";
+
+const userShcema = new Schema({
     firstName: String,
     secondName: String,
     email: String,
     password: String,
     avatarImg: String,
     description: String,
-    cars: Car[]
-}
-
-export interface Car {
+    cars: [
+        {
             name: String,
             year: Number,
             model: String,
@@ -22,5 +22,10 @@ export interface Car {
                 lastChnage: Number,
                 nextChange: Number
             }
-}
+        }
+    ]
+},{ minimize: false });
 
+const User = mongoose.models.users || mongoose.model('users', userShcema);
+
+export default User; 
