@@ -1,8 +1,34 @@
+'use client'
+import { useEffect } from 'react';
 import { Logo } from './components';
 import './globals.css';
 import Link from "next/link";
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+
+  const router = useRouter();
+
+  useEffect(()=>{
+    const handlePost = async () => {
+      await axios.post('/api/cookie', {})
+      .then((response) => {
+      if(response.status === 200){
+        if(response.data === 'none'){
+
+        }else{
+          router.push('/Main');
+        }
+      }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+      }
+      handlePost();
+  },[])
+
   return (
       <div className='w-[100%] h-full flex items-center justify-between bg-[url(../public/background.png)] bg-center bg-cover p-[20px]'>
         <div className='w-min h-min flex content-center flex-col pl-[100px]'>

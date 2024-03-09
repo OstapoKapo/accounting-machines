@@ -1,11 +1,11 @@
 export interface User {
-    firstName: String,
-    secondName: String,
+    firstName?: String,
+    secondName?: String,
     email: String,
     password: String,
-    avatarImg: String,
-    description: String,
-    cars: Car[]
+    avatarImg?: String,
+    description?: String,
+    cars?: Car[]
 }
 
 export interface Car {
