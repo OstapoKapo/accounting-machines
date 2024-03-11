@@ -4,10 +4,10 @@ import User from  '../../../models/user';
 import initMiddleware from "../../../libs/init-middleware";
 import Cors from 'cors';
 
-Cors();
 
 export async function POST(request) {
-    await cors(request);
+    
+Cors();
     try {
         await connectMongoDb();  
         const  {data} = await request.json();
