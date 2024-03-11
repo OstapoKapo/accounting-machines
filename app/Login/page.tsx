@@ -51,7 +51,7 @@ const handleSubmit = () => {
 
 const postHandle = async (user: User) => {
   const data = user;
-  await axios.post('https://accounting-machines-9shb18jaq-ostapokapo.vercel.app/api/login', {data})
+  await axios.post('https://accounting-machines.vercel.app/api/login', {data})
   .then((response) => {
     if(response.status === 200){
       if(typeof response.data === 'string' ){
