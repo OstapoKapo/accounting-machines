@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 import connectMongoDb from "../../../libs/mongodb";
 import User from  '../../../models/user';
+import initMiddleware from "../../../libs/init-middleware";
+import Cors from 'cors';
 
+Cors();
 
 export async function POST(request) {
+    await cors(request);
     try {
         await connectMongoDb();  
         const  {data} = await request.json();
