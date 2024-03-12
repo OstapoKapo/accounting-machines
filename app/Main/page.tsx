@@ -1,5 +1,5 @@
 'use client'
-import { Header } from '../components';
+import { Cars, Header } from '../components';
 import '../globals.css';
 import axios from 'axios';
 import { UseSelector, useDispatch, useSelector } from 'react-redux';
@@ -38,6 +38,7 @@ export default function Main() {
         <div className='w-[140px] h-[45px] rounded-[6px] center border-[1px] text-white bg-[#5DB75E] cursor-pointer'>Add Car</div>
         <input type="text" className='input' placeholder='Search Car'/>
        </div>
+       <Cars />
       </div>
   );
 }
