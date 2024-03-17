@@ -72,7 +72,11 @@ const postHandle = async (user: User) => {
         alert(response.data);
       }else if(typeof response.data === 'object'){
         dispatch(setUser(response.data));
-        setCookie("user", JSON.stringify(response.data), {
+        const cookieUser = {
+          email: response.data.email,
+          password: response.data.password
+        }
+        setCookie("user", JSON.stringify(cookieUser), {
           path: "/",
           maxAge: 3600, // Expires after 1hr
           sameSite: true,

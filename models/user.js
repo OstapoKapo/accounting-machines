@@ -9,19 +9,23 @@ const userShcema = new Schema({
     description: String,
     cars: [
         {
+            history: [{
+                description: String,
+                date: String
+            }],
+            lubricants: {
+                lastChange: String,
+                nextChange: String
+            },
+            filter: {
+                lastChange: String,
+                nextChange: String
+            },
             name: String,
             year: Number,
             model: String,
             brand: String,
             carImg: String,
-            lubricants: {
-                lastChnage: Number,
-                nextChange: Number
-            },
-            filter: {
-                lastChnage: Number,
-                nextChange: Number
-            }
         }
     ]
 },{ minimize: false });

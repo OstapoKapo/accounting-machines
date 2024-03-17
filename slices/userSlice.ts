@@ -15,7 +15,7 @@ const initialState: initialState = {
         password: '',
         avatarImg: '',
         description: '',
-        cars: []
+        cars: [],
     }
 }
 

@@ -5,22 +5,28 @@ export interface User {
     password: String,
     avatarImg?: String,
     description?: String,
-    cars?: Car[]
+    cars: Car[],
 }
 
 export interface Car {
-            name: String,
-            year: Number,
-            model: String,
-            brand: String,
-            carImg: String,
-            lubricants: {
-                lastChnage: Number,
-                nextChange: Number
-            },
-            filter: {
-                lastChnage: Number,
-                nextChange: Number
-            }
+    _id?: String,
+    history: History[]        
+    year: Number,
+    model: String,
+    brand: String,
+    carImg: String,
+    lubricants: {
+        lastChange: String,
+        nextChange: String
+    },
+    filter: {
+        lastChange: String,
+        nextChange: String
+    }
+}
+
+export interface History {
+    description: String,
+    date: String
 }
 
